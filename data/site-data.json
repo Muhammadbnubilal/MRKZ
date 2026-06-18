@@ -1,0 +1,87 @@
+{
+  "admin": {
+    "username": "mbbsec",
+    "salt": "0c2ba0ac9f1ea6837928a1a33d3e357f",
+    "hash": "65eb23140ec434f747dce71ef9529d530d7e832e02268c5d14c85cab0205f0097fa54b817f42e09a1aa979a8808296770ca33d4c6fb3671e66d0121614a4afac",
+    "iterations": 150000
+  },
+  "settings": {
+    "address": "Karikkankulam, Karaparamba, Kozhikode, Kerala, India",
+    "heroTitle": "Learn the Holy Qur'an & Islamic Studies",
+    "heroSubtitle": "Welcome to Markaz Imam Ahmad bin Hanbal",
+    "heroDesc": "A peaceful environment dedicated to studying sacred knowledge, correct recitation, and beautiful character.",
+    "admissionMode": "active",
+    "phone": "0495112223",
+    "email": "markazimamahmedbinhambel@gmail.com",
+    "studentsCount": "500",
+    "teachersCount": "25"
+  },
+  "programs": [
+    "Qur'an & Tajweed Course",
+    "Hifz Academy (Memorization)",
+    "Islamic Studies Core",
+    "Arabic Language Basics"
+  ],
+  "progressOptions": [
+    "Don't know arabic letters",
+    "Beginner (learning letters)",
+    "Reading smoothly from book",
+    "Partially Memorized (Some Juz)",
+    "Hifz completed"
+  ],
+  "admissions": [],
+  "acceptedRoster": [],
+  "messages": [],
+  "notices": [],
+  "events": [],
+  "settingsHistory": [
+    {
+      "timestamp": 1781681107803,
+      "settings": {
+        "address": "Karikkankulam, Karaparamba, Kozhikode, Kerala, India",
+        "heroTitle": "Learn the Holy Qur'an & Islamic Studies",
+        "heroSubtitle": "Welcome to Markaz Imam Ahmad bin Hanbal",
+        "heroDesc": "A peaceful environment dedicated to studying sacred knowledge, correct recitation, and beautiful character.",
+        "admissionMode": "active"
+      }
+    },
+    {
+      "timestamp": 1781690723715,
+      "settings": {
+        "address": "Karikkankulam, Karaparamba, Kozhikode, Kerala, India",
+        "heroTitle": "Learn the Holy Qur'an & Islamic Studies",
+        "heroSubtitle": "Welcome to Markaz Imam Ahmad bin Hanbal",
+        "heroDesc": "A peaceful environment dedicated to studying sacred knowledge, correct recitation, and beautiful character.",
+        "admissionMode": "active",
+        "phone": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "email": "muhammadbnubilal@gmail.com"
+      }
+    },
+    {
+      "timestamp": 1781692255155,
+      "settings": {
+        "address": "Karikkankulam, Karaparamba, Kozhikode, Kerala, India",
+        "heroTitle": "Learn the Holy Qur'an & Islamic Studies",
+        "heroSubtitle": "Welcome to Markaz Imam Ahmad bin Hanbal",
+        "heroDesc": "A peaceful environment dedicated to studying sacred knowledge, correct recitation, and beautiful character.",
+        "admissionMode": "active",
+        "phone": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "email": "muhammadbnubilal@gmail.com"
+      }
+    },
+    {
+      "timestamp": 1781693265331,
+      "settings": {
+        "address": "Karikkankulam, Karaparamba, Kozhikode, Kerala, India",
+        "heroTitle": "Learn the Holy Qur'an & Islamic Studies",
+        "heroSubtitle": "Welcome to Markaz Imam Ahmad bin Hanbal",
+        "heroDesc": "A peaceful environment dedicated to studying sacred knowledge, correct recitation, and beautiful character.",
+        "admissionMode": "active",
+        "phone": "0495112223",
+        "email": "muhammadbnubilal@gmail.com",
+        "studentsCount": "500",
+        "teachersCount": "25"
+      }
+    }
+  ]
+}

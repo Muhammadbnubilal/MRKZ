@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markaz Imam Ahmad bin Hanbal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: { 50: '#f0fdf4', 100: '#dcfce7', 800: '#065f46', 900: '#044235', 950: '#022c22' },
+                        gold: { 50: '#fef9e7', 400: '#e5c158', 500: '#D4AF37', 600: '#b8932b' }
+                    },
+                    fontFamily: { sans: ['Poppins', 'sans-serif'], serif: ['Playfair Display', 'serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+<style>
+    .reveal-element { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+    .reveal-element.active { opacity: 1; transform: translateY(0); }
+    .image-zoom { transition: transform 0.5s ease; }
+    .image-zoom:hover { transform: scale(1.05); }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f8fafc; }
+    ::-webkit-scrollbar-thumb { background: #044235; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+    html { scroll-behavior: smooth; }
+
+    .view-layer {
+        min-height: 100vh;
+    }
+
+    .fade-enter { animation: fadeEnter 0.9s ease both; }
+    .slide-left { animation: slideLeft 0.7s ease both; }
+    .slide-right { animation: slideRight 0.7s ease both; }
+    .hero-fade { animation: heroFade 1.2s ease both; }
+
+    @keyframes fadeEnter {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideLeft {
+        from { opacity: 0; transform: translateX(-24px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideRight {
+        from { opacity: 0; transform: translateX(24px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes heroFade {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+</style>
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+
+<nav id="mainNavbar" ...
+<nav id="mainNavbar" class="fixed top-0 w-full z-40 bg-white border-b border-gray-100 shadow-sm py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="navigateToSection('home')">
+                <img src="/logo.png" alt="Markaz Logo" class="h-12 w-12 object-contain">
+                <div>
+                    <span class="font-serif block text-base font-bold text-emerald-900 tracking-tight leading-tight">Markaz Imam Ahmad</span>
+                    <span class="font-serif block text-xs font-semibold text-gold-600 tracking-wider uppercase">bin Hanbal</span>
+                </div>
+            </div>
+
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="#home" onclick="navigateToSection('home')" class="text-emerald-900 hover:text-gold-500 font-medium text-sm transition">Home</a>
+                <a href="#about" onclick="navigateToSection('about')" class="text-emerald-900 hover:text-gold-500 font-medium text-sm transition">About</a>
+                <a href="#programs" onclick="navigateToSection('programs')" class="text-emerald-900 hover:text-gold-500 font-medium text-sm transition">Programs</a>
+                <a href="#facilities" onclick="navigateToSection('facilities')" class="text-emerald-900 hover:text-gold-500 font-medium text-sm transition">Facilities</a>
+                <a href="#admission" id="navAdmissionLink" onclick="navigateToSection('admission')" class="text-emerald-900 hover:text-gold-500 font-medium text-sm transition">Admission</a>
+                <a href="#contact" onclick="navigateToSection('contact')" class="text-emerald-900 hover:text-gold-500 font-medium text-sm transition">Contact</a>
+                <button id="navApplyBtn" onclick="showAdmissionFormView()" class="bg-emerald-900 text-white font-medium text-xs uppercase tracking-wider px-5 py-2.5 rounded-md hover:bg-gold-500 hover:text-emerald-950 transition duration-300">Apply Now</button>
+            </div>
+
+            <div class="lg:hidden flex items-center">
+                <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="text-emerald-900 text-xl focus:outline-none"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="mobileMenuPanel" class="hidden lg:hidden px-4 pt-3 pb-4 bg-white border-t border-gray-100 space-y-2">
+        <a href="#home" onclick="navigateToSection('home'); toggleMobileMenu()" class="block font-medium text-emerald-900 py-1">Home</a>
+        <a href="#about" onclick="navigateToSection('about'); toggleMobileMenu()" class="block font-medium text-emerald-900 py-1">About</a>
+        <a href="#programs" onclick="navigateToSection('programs'); toggleMobileMenu()" class="block font-medium text-emerald-900 py-1">Programs</a>
+        <a href="#facilities" onclick="navigateToSection('facilities'); toggleMobileMenu()" class="block font-medium text-emerald-900 py-1">Facilities</a>
+        <a href="#admission" id="mobileNavAdmissionLink" onclick="navigateToSection('admission'); toggleMobileMenu()" class="block font-medium text-emerald-900 py-1">Admission</a>
+        <a href="#contact" onclick="navigateToSection('contact'); toggleMobileMenu()" class="block font-medium text-emerald-900 py-1">Contact</a>
+        <button id="mobileNavApplyBtn" onclick="showAdmissionFormView(); toggleMobileMenu()" class="w-full bg-emerald-900 text-white py-2 rounded font-medium text-center block mt-2 text-sm">Apply Now</button>
+    </div>
+</nav>
+
+<div id="publicWebsiteView" class="view-layer pt-16">
+    
+    <section id="home" class="relative h-[80vh] flex items-center justify-center overflow-hidden bg-emerald-950">
+        <div class="absolute inset-0 z-0">
+            <div id="heroBgImage" class="w-full h-full bg-center bg-cover duration-700 transition-all opacity-40" style="background-image: url('/building.jpg');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-emerald-950 via-emerald-900/30 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto text-center px-4">
+            <span id="heroSubtitle" class="text-gold-400 font-semibold tracking-widest text-xs uppercase block mb-3">Welcome to Markaz Imam Ahmad bin Hanbal</span>
+            <h1 id="heroTitle" class="font-serif text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">Learn the Holy Qur'an & Islamic Studies</h1>
+            <p id="heroDesc" class="text-base sm:text-lg text-emerald-50 max-w-2xl mx-auto mb-8 opacity-90 font-light">A peaceful environment dedicated to studying sacred knowledge, correct recitation, and beautiful character.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button id="heroApplyBtn" onclick="showAdmissionFormView()" class="px-6 py-3 rounded bg-gold-500 hover:bg-gold-600 text-emerald-950 font-semibold text-xs uppercase tracking-wider transition shadow-md">Apply Now</button>
+                <a href="#programs" onclick="navigateToSection('programs')" class="px-6 py-3 rounded bg-white/10 hover:bg-white/20 text-white font-medium text-xs uppercase tracking-wider border border-white/20 transition">Our Programs</a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-6 flex gap-2 z-20">
+            <span onclick="changeHeroSlide(0)" class="w-2.5 h-2.5 rounded-full cursor-pointer bg-white" id="slideDot0"></span>
+            <span onclick="changeHeroSlide(1)" class="w-2.5 h-2.5 rounded-full cursor-pointer bg-white/40" id="slideDot1"></span>
+            <span onclick="changeHeroSlide(2)" class="w-2.5 h-2.5 rounded-full cursor-pointer bg-white/40" id="slideDot2"></span>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal-element">
+                    <span class="text-gold-600 font-semibold tracking-wider text-xs uppercase block mb-2">About Our Institution</span>
+                    <h2 class="font-serif text-2xl sm:text-3xl font-bold text-emerald-900 mb-4">Preserving True Knowledge and Good Character</h2>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">Markaz Imam Ahmad bin Hanbal is a center for Islamic learning and Qur'an memorization located in Kozhikode, Kerala. Named after the great scholar Imam Ahmad, we focus on helping students build a strong connection to the Book of Allah and the authentic ways of the Prophet.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6">We focus both on correct textbook learning and personal behavior training (Tarbiyah). This ensures our students grow up to be knowledgeable, respectful, and helpful members of our local community.</p>
+                    <div class="p-4 bg-slate-50 rounded-lg border-l-4 border-gold-500">
+                        <span class="block font-serif font-bold text-xs text-emerald-900 uppercase tracking-wider mb-1">Our Simple Aim</span>
+                        <p class="text-gray-600 text-xs leading-relaxed">To teach the Holy Qur'an and simple Islamic sciences clearly and accurately, helping families protect their religious values.</p>
+                    </div>
+                </div>
+                <div class="reveal-element relative h-[350px] sm:h-[400px]">
+                    <div class="absolute inset-0 rounded-xl overflow-hidden shadow-md">
+                        <img src="/building.jpg" alt="Markaz Building Campus" class="w-full h-full object-cover image-zoom">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 reveal-element">
+                <span class="text-gold-600 font-semibold tracking-wider text-xs uppercase block mb-1">What We Teach</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-emerald-900">Our Learning Programs</h2>
+                <div class="w-12 h-0.5 bg-gold-500 mx-auto mt-3"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded bg-emerald-50 text-emerald-900 flex items-center justify-center text-lg mb-4"><i class="fas fa-book-open"></i></div>
+                        <h3 class="font-serif text-lg font-bold text-emerald-900 mb-2">Qur'an & Tajweed</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">Learn to read the Holy Qur'an properly with correct pronunciation rules from the basic letters up to smooth recitation.</p>
+                    </div>
+                    <span class="text-[11px] font-medium text-gold-600 tracking-wide uppercase bg-gold-50 py-1 px-2.5 rounded w-max">For All Ages</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded bg-emerald-50 text-emerald-900 flex items-center justify-center text-lg mb-4"><i class="fas fa-heart"></i></div>
+                        <h3 class="font-serif text-lg font-bold text-emerald-900 mb-2">Hifz Academy</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">A structured path for complete memorization of the Qur'an with regular testing and daily revision settings.</p>
+                    </div>
+                    <span class="text-[11px] font-medium text-gold-600 tracking-wide uppercase bg-gold-50 py-1 px-2.5 rounded w-max">Full & Part Time</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded bg-emerald-50 text-emerald-900 flex items-center justify-center text-lg mb-4"><i class="fas fa-graduation-cap"></i></div>
+                        <h3 class="font-serif text-lg font-bold text-emerald-900 mb-2">Islamic Studies</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">Simple lessons covering basic Islamic jurisprudence, authentic Hadith, history, and daily supplications.</p>
+                    </div>
+                    <span class="text-[11px] font-medium text-gold-600 tracking-wide uppercase bg-gold-50 py-1 px-2.5 rounded w-max">Core Course</span>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded bg-emerald-50 text-emerald-900 flex items-center justify-center text-lg mb-4"><i class="fas fa-language"></i></div>
+                        <h3 class="font-serif text-lg font-bold text-emerald-900 mb-2">Arabic Language</h3>
+                        <p class="text-gray-600 text-xs leading-relaxed mb-4">Basic grammar and talking lessons to help students understand the wording and meanings of the Holy Qur'an.</p>
+                    </div>
+                    <span class="text-[11px] font-medium text-gold-600 tracking-wide uppercase bg-gold-50 py-1 px-2.5 rounded w-max">Language Basics</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="facilities" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 reveal-element">
+                <span class="text-gold-600 font-semibold tracking-wider text-xs uppercase block mb-1">Our Environment</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-emerald-900">Facilities We Offer</h2>
+                <div class="w-12 h-0.5 bg-gold-500 mx-auto mt-3"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="rounded-xl overflow-hidden bg-white border border-gray-100 shadow-sm">
+                    <div class="h-44 overflow-hidden"><img src="/masjid.jpg" alt="Masjid" class="w-full h-full object-cover image-zoom"></div>
+                    <div class="p-4">
+                        <h4 class="font-serif font-bold text-base text-emerald-900">Masjid</h4>
+                        <p class="text-gray-500 text-xs mt-1">A clean, bright space for daily congregational prayers and spiritual peace.</p>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden bg-white border border-gray-100 shadow-sm">
+                    <div class="h-44 overflow-hidden"><img src="/library.jpg" alt="Library" class="w-full h-full object-cover image-zoom"></div>
+                    <div class="p-4">
+                        <h4 class="font-serif font-bold text-base text-emerald-900">Library</h4>
+                        <p class="text-gray-500 text-xs mt-1">Stocked books covering classic texts of Hadith and Islamic reference collections.</p>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden bg-white border border-gray-100 shadow-sm">
+                    <div class="h-44 overflow-hidden"><img src="/classroom.jpg" alt="Classrooms" class="w-full h-full object-cover image-zoom"></div>
+                    <div class="p-4">
+                        <h4 class="font-serif font-bold text-base text-emerald-900">Classrooms</h4>
+                        <p class="text-gray-500 text-xs mt-1">Simple, well-organized sitting areas carefully built for daily study focus.</p>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden bg-white border border-gray-100 shadow-sm">
+                    <div class="h-44 overflow-hidden"><img src="/building.jpg" alt="Main Building" class="w-full h-full object-cover image-zoom"></div>
+                    <div class="p-4">
+                        <h4 class="font-serif font-bold text-base text-emerald-900">Peaceful Environment</h4>
+                        <p class="text-gray-500 text-xs mt-1">A safe, calm institutional campus away from noisy roads and local distractions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="admission" class="py-16 bg-emerald-900 text-white relative">
+    <div class="max-w-4xl mx-auto text-center px-4 flex flex-col items-center">
+        <h2 class="font-serif text-3xl font-bold text-gold-500 mb-3">
+            Take Admission
+        </h2>
+
+        <p class="text-emerald-100 text-sm max-w-xl mx-auto mb-6">
+            Join Markaz Imam Ahmad bin Hanbal and begin your journey of Islamic learning.
+        </p>
+
+        <button
+            id="ctaApplyBtn"
+            onclick="showAdmissionFormView()"
+            class="bg-gold-500 hover:bg-gold-600 text-emerald-950 font-bold px-8 py-3 rounded text-xs uppercase tracking-wider transition transform hover:-translate-y-0.5">
+            Apply Now
+        </button>
+    </div>
+</section>
+
+    <section id="publicInformationSection" class="py-12 bg-slate-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="infoGridWrapper" class="grid grid-cols-1 lg:grid-cols-2 gap-8 text-xs sm:text-sm">
+                <div id="noticeColBox" class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                    <h3 class="font-serif font-bold text-emerald-900 text-base border-b pb-2 mb-3"><i class="fas fa-bullhorn text-gold-500 mr-2"></i> Notices</h3>
+                    <ul id="publicNoticeList" class="space-y-3 text-xs text-gray-600"></ul>
+                </div>
+                <div id="eventColBox" class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                    <h3 class="font-serif font-bold text-emerald-900 text-base border-b pb-2 mb-3"><i class="fas fa-calendar-alt text-gold-500 mr-2"></i> Upcoming Events</h3>
+                    <ul id="publicEventList" class="space-y-3 text-xs text-gray-600"></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section id="contact" class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-white rounded-3xl border border-slate-200 shadow-lg p-6 reveal-element slide-left">
+                <span class="text-gold-600 font-semibold tracking-wider text-xs uppercase block mb-1">Get in Touch</span>
+                <h2 class="font-serif text-2xl font-bold text-emerald-900 mb-5">Contact Us</h2>
+
+                <div class="space-y-4 text-sm text-gray-600">
+                    <div class="flex items-start gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-900 text-white flex items-center justify-center shrink-0">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-emerald-900 text-sm">Address</p>
+                            <p id="publicAddressText" class="leading-relaxed mt-1">Karikkankulam, Karaparamba, Kozhikode, Kerala, India</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-900 text-white flex items-center justify-center shrink-0">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-emerald-900 text-sm">Phone</p>
+                            <p id="publicPhoneText" class="leading-relaxed mt-1">+91 495 237 0000</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-900 text-white flex items-center justify-center shrink-0">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-emerald-900 text-sm">Email</p>
+                            <p id="publicEmailText" class="leading-relaxed mt-1">office@markazhanbal.org</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-slate-200 shadow-lg p-6 reveal-element slide-right">
+                <h3 class="font-serif text-lg font-bold text-emerald-900 mb-4">Send a Message</h3>
+                <form onsubmit="handleInquirySubmission(event)" class="space-y-4 text-sm">
+                    <div>
+                        <label class="block font-medium text-gray-600 mb-1">Your Name</label>
+                        <input type="text" id="msgName" required class="w-full p-3 rounded-2xl border border-gray-200 bg-white outline-none focus:border-emerald-800">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block font-medium text-gray-600 mb-1">Email Address</label>
+                            <input type="email" id="msgEmail" required class="w-full p-3 rounded-2xl border border-gray-200 bg-white outline-none focus:border-emerald-800">
+                        </div>
+                        <div>
+                            <label class="block font-medium text-gray-600 mb-1">Phone Number</label>
+                            <input type="tel" id="msgPhone" required class="w-full p-3 rounded-2xl border border-gray-200 bg-white outline-none focus:border-emerald-800">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block font-medium text-gray-600 mb-1">Your Message</label>
+                        <textarea id="msgBody" rows="4" required class="w-full p-3 rounded-2xl border border-gray-200 bg-white outline-none focus:border-emerald-800" placeholder="Type your text here..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-emerald-900 text-white font-semibold rounded-2xl uppercase tracking-wider hover:bg-gold-500 hover:text-emerald-950 transition">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+
+<div id="admissionFormView" class="view-layer hidden pt-24 pb-16 bg-slate-100 min-h-screen">
+    <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
+        <div class="bg-emerald-900 p-6 text-center text-white relative">
+            <button onclick="showPublicWebsiteView()" class="absolute top-6 left-6 text-emerald-100 hover:text-white text-xs flex items-center gap-1"><i class="fas fa-arrow-left"></i> Back</button>
+            <h1 class="font-serif text-xl sm:text-2xl font-bold text-gold-500">Apply for Admission</h1>
+            <p class="text-xs text-emerald-100 mt-0.5">Please fill out this simple form accurately</p>
+        </div>
+
+        <form id="publicApplicationForm" onsubmit="submitAdmissionForm(event)" class="p-6 space-y-4 text-xs sm:text-sm">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <label class="block font-medium text-gray-600 mb-1">Student's Full Name *</label>
+                    <input type="text" id="appStudentName" required class="w-full p-2.5 border rounded bg-slate-50 outline-none focus:bg-white focus:border-emerald-900">
+                </div>
+                <div>
+                    <label class="block font-medium text-gray-600 mb-1">Date of Birth *</label>
+                    <input type="date" id="appStudentDob" required class="w-full p-2.5 border rounded bg-slate-50 outline-none focus:bg-white focus:border-emerald-900">
+                </div>
+                <div>
+                    <label class="block font-medium text-gray-600 mb-1">Parent or Guardian Name *</label>
+                    <input type="text" id="appGuardianName" required class="w-full p-2.5 border rounded bg-slate-50 outline-none focus:bg-white focus:border-emerald-900">
+                </div>
+                <div>
+                    <label class="block font-medium text-gray-600 mb-1">Contact Phone Number *</label>
+                    <input type="tel" id="appPhoneNumber" required class="w-full p-2.5 border rounded bg-slate-50 outline-none focus:bg-white focus:border-emerald-900">
+                </div>
+            </div>
+            <div>
+                <label class="block font-medium text-gray-600 mb-1">Residential Address *</label>
+                <textarea id="appAddress" rows="3" required class="w-full p-2.5 border rounded bg-slate-50 outline-none focus:bg-white focus:border-emerald-900" placeholder="Your house address..."></textarea>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <label class="block font-medium text-gray-600 mb-1">Select Study Program *</label>
+                    <select id="appProgram" class="w-full p-2.5 border rounded bg-slate-50 outline-none focus:bg-white focus:border-emerald-900">
+                        </select>
+                </div>
+                <div>
+                    <label class="block font-medium text-gray-600 mb-1">Current Progress Status *</label>
+                    <select id="appProgress" class="w-full p-2.5 border rounded bg-slate-50 outline-none focus:bg-white focus:border-emerald-900">
+                        </select>
+                </div>
+            </div>
+            <div class="pt-2">
+                <button type="submit" class="w-full py-3 bg-emerald-900 text-white font-semibold rounded hover:bg-emerald-950 transition text-xs uppercase tracking-wider shadow">Submit Application Form</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="adminLoginView" class="view-layer hidden min-h-screen bg-gradient-to-br from-emerald-950 via-slate-950 to-emerald-900 flex items-center justify-center px-4 py-16">
+    <div class="w-full max-w-md bg-slate-950/90 border border-emerald-500/20 rounded-3xl shadow-2xl overflow-hidden">
+        <div class="px-6 py-7 text-center bg-gradient-to-b from-emerald-900 to-emerald-950 border-b border-white/10">
+            <div class="w-16 h-16 mx-auto rounded-2xl bg-emerald-500/10 border border-emerald-400/20 flex items-center justify-center mb-4">
+                <i class="fas fa-landmark text-emerald-400 text-2xl"></i>
+            </div>
+            <h2 class="font-serif text-2xl font-bold text-white">Admin Login</h2>
+            <p class="text-emerald-100/70 text-xs mt-2">Authorized internal operators only</p>
+        </div>
+
+        <form onsubmit="processAdminLogin(event)" class="p-6 space-y-4">
+            <div>
+                <label class="block text-emerald-100/80 font-medium mb-1 text-xs uppercase tracking-wider">Username</label>
+                <input type="text" id="adminUser" required class="w-full p-3 rounded-xl bg-white/95 border border-white/10 outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20">
+            </div>
+            <div>
+                <label class="block text-emerald-100/80 font-medium mb-1 text-xs uppercase tracking-wider">Password</label>
+                <input type="password" id="adminPass" required class="w-full p-3 rounded-xl bg-white/95 border border-white/10 outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20">
+            </div>
+
+            <div class="pt-2 flex gap-2">
+                <button type="button" onclick="showPublicWebsiteView()" class="w-1/2 px-4 py-3 rounded-xl border border-white/10 text-white/80 hover:bg-white/5 transition">
+                    Cancel
+                </button>
+                <button type="submit" class="w-1/2 px-4 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-emerald-950 font-bold transition shadow-lg shadow-emerald-500/20">
+                    Login
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="adminDashboardView" class="view-layer hidden min-h-screen bg-slate-100">
+    <div class="flex">
+            
+            <aside class="fixed left-0 top-0 w-72 h-screen bg-emerald-950 text-white shadow-2xl z-50">
+                <div class="p-6 border-b border-white/10">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-500/15 flex items-center justify-center border border-emerald-400/20">
+                            <i class="fas fa-mosque text-emerald-300"></i>
+                        </div>
+                        <div>
+                            <h2 class="font-serif text-lg font-bold text-white leading-tight">Markaz Admin</h2>
+                            <p class="text-emerald-100/60 text-[11px] uppercase tracking-wider">Control Panel</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-4 space-y-2">
+                    <button onclick="switchAdminSubTab('admissions')" id="tabBtn-admissions" class="w-full text-left px-4 py-3 rounded-2xl bg-emerald-600 text-white font-medium shadow">
+                        <i class="fas fa-file-signature mr-2"></i> View Applications
+                    </button>
+                    <button onclick="switchAdminSubTab('messages')" id="tabBtn-messages" class="w-full text-left px-4 py-3 rounded-2xl bg-white/5 text-white/85 hover:bg-white/10 transition border border-white/10">
+                        <i class="fas fa-envelope mr-2"></i> Contact Messages
+                    </button>
+                    <button onclick="switchAdminSubTab('notices')" id="tabBtn-notices" class="w-full text-left px-4 py-3 rounded-2xl bg-white/5 text-white/85 hover:bg-white/10 transition border border-white/10">
+                        <i class="fas fa-bullhorn mr-2"></i> Manage Notices
+                    </button>
+                    <button onclick="switchAdminSubTab('events')" id="tabBtn-events" class="w-full text-left px-4 py-3 rounded-2xl bg-white/5 text-white/85 hover:bg-white/10 transition border border-white/10">
+                        <i class="fas fa-calendar-days mr-2"></i> Manage Events
+                    </button>
+                    <button onclick="switchAdminSubTab('content')" id="tabBtn-content" class="w-full text-left px-4 py-3 rounded-2xl bg-white/5 text-white/85 hover:bg-white/10 transition border border-white/10">
+                        <i class="fas fa-pen-to-square mr-2"></i> Website Content
+                    </button>
+                </div>
+
+                <div class="p-4 border-t border-white/10 space-y-2">
+                    <button onclick="openChangePasswordModal()" class="w-full px-4 py-3 rounded-2xl bg-white/10 hover:bg-white/15 text-white font-medium transition border border-white/10">
+                        <i class="fas fa-shield-halved mr-2"></i> Security Credentials
+                    </button>
+                    <button onclick="logoutAdminSession()" class="w-full px-4 py-3 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-emerald-950 font-bold transition">
+                        <i class="fas fa-right-from-bracket mr-2"></i> Logout
+                    </button>
+                </div>
+            </aside>
+
+            <main class="ml-72 flex-1 p-8 space-y-6 h-screen overflow-y-auto">
+                <div class="bg-white rounded-3xl shadow-sm border border-slate-200 p-5 fade-enter">
+                    <h3 class="font-serif text-xl font-bold text-emerald-950">Admin Dashboard</h3>
+                    <p class="text-sm text-slate-500 mt-1">Manage applications, notices, events, and website content from one place.</p>
+                </div>
+
+                <div id="adminSubTab-admissions" class="admin-panel-block bg-white p-5 rounded-3xl border shadow-sm space-y-8 slide-right">
+                    <div>
+                        <h3 class="font-serif text-base font-bold text-emerald-900 mb-4">Pending Inbox Queue</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse min-w-[700px] text-xs">
+                                <thead>
+                                    <tr class="text-gray-400 border-b uppercase font-semibold">
+                                        <th class="pb-2">Student Name</th>
+                                        <th class="pb-2">Guardian</th>
+                                        <th class="pb-2">Phone</th>
+                                        <th class="pb-2">Program Selected</th>
+                                        <th class="pb-2 text-center">Processing Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminAdmissionsTableBody" class="divide-y text-gray-700"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="border-t pt-6">
+                        <h3 class="font-serif text-base font-bold text-emerald-800 mb-3"><i class="fas fa-id-card mr-1.5"></i> Accepted Institutional Rosters</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border text-xs bg-slate-50">
+                                <thead>
+                                    <tr class="bg-slate-100 text-gray-600 font-semibold border-b">
+                                        <th class="p-2.5">Name</th>
+                                        <th class="p-2.5">Guardian</th>
+                                        <th class="p-2.5">Program</th>
+                                        <th class="p-2.5 text-center">Status Track</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminAcceptedTableBody" class="divide-y text-gray-600"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="adminSubTab-messages" class="admin-panel-block hidden bg-white p-5 rounded-3xl border shadow-sm space-y-4 slide-left">
+                    <h3 class="font-serif text-base font-bold text-emerald-900">User Inquiries & Messages</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border text-xs">
+                            <thead>
+                                <tr class="bg-slate-100 border-b">
+                                    <th class="p-2">Name</th>
+                                    <th class="p-2">Email</th>
+                                    <th class="p-2">Phone</th>
+                                    <th class="p-2">Message</th>
+                                    <th class="p-2 text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminMessagesTableBody" class="divide-y"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="adminSubTab-notices" class="admin-panel-block hidden bg-white p-5 rounded-3xl border shadow-sm space-y-4 slide-right">
+                    <h3 class="font-serif text-base font-bold text-emerald-900">Manage Notices</h3>
+                    <div class="bg-slate-50 p-4 rounded-2xl border max-w-xl">
+                        <h4 class="font-semibold text-xs text-gray-700 mb-2">Publish New Notice Statement</h4>
+                        <div class="space-y-2">
+                            <input type="text" id="newNoticeText" placeholder="Type notice statement details here..." class="w-full p-2 border bg-white rounded-xl outline-none">
+                            <button onclick="createNewNoticeRecord()" class="px-4 py-2 bg-emerald-900 text-white font-medium text-xs rounded-xl hover:bg-emerald-950 transition">Add Notice</button>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-semibold text-xs text-emerald-900 mb-2">Current Active Notices</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border text-xs">
+                                <thead>
+                                    <tr class="bg-slate-100 border-b">
+                                        <th class="p-2">Date</th>
+                                        <th class="p-2">Notice Text</th>
+                                        <th class="p-2 text-center">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminNoticesTableBody" class="divide-y"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="adminSubTab-events" class="admin-panel-block hidden bg-white p-5 rounded-3xl border shadow-sm space-y-4 slide-left">
+                    <h3 class="font-serif text-base font-bold text-emerald-900">Manage Upcoming Events</h3>
+                    <div class="bg-slate-50 p-4 rounded-2xl border max-w-xl">
+                        <h4 class="font-semibold text-xs text-gray-700 mb-2">Add Upcoming Event Entry</h4>
+                        <div class="space-y-2">
+                            <input type="text" id="newEventTitle" placeholder="Event Title..." class="w-full p-2 border bg-white rounded-xl outline-none">
+                            <input type="text" id="newEventDesc" placeholder="Brief details description..." class="w-full p-2 border bg-white rounded-xl outline-none">
+                            <button onclick="createNewEventRecord()" class="px-4 py-2 bg-emerald-900 text-white font-medium text-xs rounded-xl hover:bg-emerald-950 transition">Add Event</button>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="font-semibold text-xs text-emerald-900 mb-2">Current Active Events</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border text-xs">
+                                <thead>
+                                    <tr class="bg-slate-100 border-b">
+                                        <th class="p-2">Title</th>
+                                        <th class="p-2">Description</th>
+                                        <th class="p-2 text-center">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminEventsTableBody" class="divide-y"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="adminSubTab-content" class="admin-panel-block hidden bg-white p-5 rounded-3xl border shadow-sm space-y-6 fade-enter">
+                    <div>
+                        <h3 class="font-serif text-base font-bold text-emerald-900 mb-2">Manage Website Content & Controls</h3>
+                        <p class="text-xs text-gray-400 mb-4">Dynamically toggle admission states, modify layout alerts, and structure entry criteria configurations.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-4 bg-slate-50 p-4 rounded-2xl border">
+    <h4 class="font-serif font-bold text-emerald-800 text-xs uppercase tracking-wider border-b pb-1">System Global Controls</h4>
+    
+    <div class="flex items-center justify-between p-2 bg-white rounded-xl border">
+        <div>
+            <label class="font-semibold block text-gray-700">Global Admission Switch</label>
+            <span class="text-[11px] text-gray-400">Toggle "Apply Now" visibility and access states.</span>
+        </div>
+        <select id="configAdmissionStatus" class="p-1.5 border rounded-xl text-xs outline-none focus:border-emerald-900" onchange="updateAdmissionControlUiState()">
+            <option value="active">Active / Visible</option>
+            <option value="disabled">Disabled (Cannot Click)</option>
+            <option value="hidden">Hidden (Hide Section)</option>
+        </select>
+    </div>
+
+    <div>
+        <label class="block font-medium text-gray-700 mb-1">Institution Public Address</label>
+        <input type="text" id="txtInputConfigAddress" value="Karikkankulam, Karaparamba, Kozhikode, Kerala, India" class="w-full p-2 border bg-white rounded-xl outline-none font-mono text-xs">
+    </div>
+
+    <div>
+        <label class="block font-medium text-gray-700 mb-1">Institution Phone Number</label>
+        <input type="text" id="txtConfigPhone" value="+91 495 237 0000" class="w-full p-2 border bg-white rounded-xl outline-none font-mono text-xs">
+    </div>
+
+    <div>
+        <label class="block font-medium text-gray-700 mb-1">Institution Email Address</label>
+        <input type="text" id="txtConfigEmail" value="office@markazhanbal.org" class="w-full p-2 border bg-white rounded-xl outline-none font-mono text-xs">
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        <div>
+            <label class="block font-medium text-gray-700 mb-1">Hero Section Title</label>
+            <input type="text" id="txtConfigHeroTitle" value="Learn the Holy Qur'an & Islamic Studies" class="w-full p-2 border bg-white rounded-xl outline-none text-xs">
+        </div>
+        <div>
+            <label class="block font-medium text-gray-700 mb-1">Hero Subtitle Alert</label>
+            <input type="text" id="txtConfigHeroSubtitle" value="Welcome to Markaz Imam Ahmad bin Hanbal" class="w-full p-2 border bg-white rounded-xl outline-none text-xs">
+        </div>
+    </div>
+    
+    <div>
+        <label class="block font-medium text-gray-700 mb-1">Hero Short Description text</label>
+        <textarea id="txtConfigHeroDesc" rows="2" class="w-full p-2 border bg-white rounded-xl outline-none text-xs">A peaceful environment dedicated to studying sacred knowledge, correct recitation, and beautiful character.</textarea>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-2">
+        <button onclick="saveGlobalWebsiteContentConfigurations()" class="px-4 py-2 bg-emerald-900 text-white font-medium text-xs rounded-xl hover:bg-emerald-950 transition flex items-center justify-center gap-1 shadow">
+            <i class="fas fa-save"></i> Save Website Modifications
+        </button>
+    </div>
+</div>
+
+
+ <div class="space-y-4 bg-slate-50 p-4 rounded-2xl border">
+         <h4 class="font-serif font-bold text-emerald-800 text-xs uppercase tracking-wider border-b pb-1"><i class="fas fa-sliders-h mr-1"></i> Customize Application Form Lists</h4>
+                            
+   <div>
+             <div class="flex justify-between items-center mb-1">
+                    <label class="block font-medium text-gray-700">Study Program Menu Options</label>
+                  <span class="text-[10px] text-gray-400">One option per line</span>
+                     </div>
+                                <textarea id="txtConfigPrograms" rows="4" class="w-full p-2 border bg-white rounded-xl outline-none font-mono text-xs leading-relaxed"></textarea>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between items-center mb-1">
+                                    <label class="block font-medium text-gray-700">Progress Status Menu Options</label>
+                                    <span class="text-[10px] text-gray-400">One option per line</span>
+                                </div>
+                                <textarea id="txtConfigProgress" rows="4" class="w-full p-2 border bg-white rounded-xl outline-none font-mono text-xs leading-relaxed"></textarea>
+                            </div>
+
+                            <button onclick="saveFormOptionsConfiguration()" class="px-4 py-2 bg-emerald-800 text-white font-medium text-xs rounded-xl hover:bg-emerald-900 transition flex items-center gap-1 shadow"><i class="fas fa-tools"></i> Apply Custom Form Layouts</button>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+</div>
+
+<div id="passwordChangeModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl shadow-2xl border border-slate-200 p-6 max-w-sm w-full text-xs sm:text-sm">
+        <h3 class="font-serif text-emerald-900 text-base font-bold mb-1 flex items-center gap-2">
+            <i class="fas fa-shield-halved text-emerald-600"></i> Account Settings
+        </h3>
+        <p class="text-gray-400 text-xs mb-4">Modify internal system operator credentials.</p>
+        
+        <div class="space-y-3">
+            <div>
+                <label class="block text-gray-600 font-medium mb-1">Current Username</label>
+                <input type="text" id="usernameCurrentDisplay" disabled class="w-full p-2 bg-slate-100 border rounded-xl font-mono text-gray-500 outline-none">
+            </div>
+            <div>
+                <label class="block text-gray-600 font-medium mb-1">New Username</label>
+                <input type="text" id="adminUserNew" class="w-full p-2 border rounded-xl outline-none focus:border-emerald-900" placeholder="Change login user name">
+            </div>
+            <hr class="my-2">
+            <div>
+                <label class="block text-gray-600 font-medium mb-1">Current Password Verification</label>
+                <input type="password" id="pwdCurrent" class="w-full p-2 border rounded-xl outline-none focus:border-emerald-900" placeholder="Required to apply updates">
+            </div>
+            <div>
+                <label class="block text-gray-600 font-medium mb-1">New Secure Password</label>
+                <input type="password" id="pwdNew" class="w-full p-2 border rounded-xl outline-none focus:border-emerald-900" placeholder="Leave blank to keep current">
+            </div>
+            <div>
+                <label class="block text-gray-600 font-medium mb-1">Confirm New Password</label>
+                <input type="password" id="pwdConfirm" class="w-full p-2 border rounded-xl outline-none focus:border-emerald-900">
+            </div>
+        </div>
+        
+        <div class="pt-4 flex justify-end gap-2">
+            <button onclick="closeChangePasswordModal()" class="px-3 py-1.5 border rounded-xl text-gray-500 hover:bg-slate-50">Cancel</button>
+            <button onclick="processSecurityCredentialsUpdate()" class="px-4 py-1.5 bg-emerald-900 text-white rounded-xl font-medium hover:bg-emerald-950 transition">Apply Changes</button>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-emerald-950 text-white border-t-2 border-gold-500 pt-10 pb-6 text-xs sm:text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-white/10 pb-8 mb-6">
+        <div>
+            <h4 class="font-serif text-gold-400 text-base font-bold uppercase tracking-tight mb-2">Markaz Imam Ahmad bin Hanbal</h4>
+            <p class="text-emerald-100/70 leading-relaxed max-w-xs">Teaching the Holy Qur'an and simple Islamic sciences clearly and accurately, helping families protect their values.</p>
+        </div>
+        <div>
+            <h4 class="font-serif text-gold-400 text-xs font-bold uppercase tracking-wider mb-2">Navigation Links</h4>
+            <div class="grid grid-cols-2 gap-1.5 text-emerald-100/80 font-medium">
+                <a href="#home" onclick="navigateToSection('home')" class="hover:text-gold-500 transition">Home</a>
+                <a href="#about" onclick="navigateToSection('about')" class="hover:text-gold-500 transition">About Us</a>
+                <a href="#programs" onclick="navigateToSection('programs')" class="hover:text-gold-500 transition">Our Programs</a>
+                <a href="#facilities" onclick="navigateToSection('facilities')" class="hover:text-gold-500 transition">Facilities</a>
+            </div>
+        </div>
+        <div>
+            <h4 class="font-serif text-gold-400 text-xs font-bold uppercase tracking-wider mb-2">Campus Location</h4>
+            <p class="text-emerald-100/70 leading-relaxed footer-address-view">Karikkankulam, Karaparamba, Kozhikode, Kerala, India</p>
+        </div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2 text-emerald-200/40 text-[11px] font-mono">
+        <span>&copy; 2026 Markaz Imam Ahmad bin Hanbal. All Rights Reserved.</span>
+    </div>
+</footer>
+
+<script>
+    window.__INITIAL_DATA__ = <%- JSON.stringify(initialData).replace(/</g, '\\u003c') %>;
+    window.__CSRF_TOKEN__ = "<%= csrfToken %>";
+    window.__IS_ADMIN__ = <%- JSON.stringify(Boolean(isAdmin)) %>;
+</script>
+<script src="/js/site.js" defer></script>
+</body>
+</html>
